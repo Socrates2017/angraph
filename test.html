@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>graph</title>
+    
+    <style type="text/css">
+	
+	*{margin:0; padding:0;}
+
+
+	.webgl{
+	position: absolute;z-index: 10;left: 0px;top: 0px;
+	}
+	#backgroundCanvas{
+	position: absolute;left: 0px;top: 0px;z-index: 10;margin:0px;padding:0px;
+	}
+	
+	#text{
+	position: absolute;left: 0px;top: 0px;z-index: 10;margin:0px;padding:0px;
+	}
+	
+    </style>
+    <script src="jquery-3.3.1.min.js"></script>
+  </head>
+
+  <body >
+  
+    <div id="graph">
+
+		<div id="canvasDiv" style="display:block;">
+		      <canvas id="webgl" class="webgl"></canvas>	      
+		      <canvas id="backgroundCanvas" ></canvas>
+		      <canvas id="text"></canvas>	      
+		</div>
+	    <div style="display:block;text-align:center;margin-top:20px">    
+	    <select name="language" id="graphType" onchange="changeGraphType()" style="font-size: 20px;cursor: pointer; background-color: whitesmoke;text-align: center;">
+		    <option value="line">折线图</option>
+		    <option value="groupedBar">柱形分组图</option>	  
+		    <option value="stackedBar">柱形堆叠图</option>	
+		    <option value="table">表格</option> 
+	   </select>
+	    <button style="font-size: 20px;cursor: pointer;background-color: whitesmoke;text-align: center;" type="button" 
+	    onclick="trans()">转置</button>
+	    <button id ="sum" style="font-size: 20px;cursor: pointer; background-color: whitesmoke;text-align: center;" type="button" 
+	    onclick="sum()">增加总和</button>
+	    <button id ="avg" style="font-size: 20px;cursor: pointer; background-color: whitesmoke;text-align: center;" type="button" 
+	    onclick="avg()">增加平均</button>
+	    </div>
+    
+    </div>
+    
+    
+    
+    <script src="angraph.js"></script>
+  </body>
+</html>
